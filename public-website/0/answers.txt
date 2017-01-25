@@ -1,0 +1,7 @@
+mysql_root_password=hellodocker
+ghost_url=https://ghost.groupthreads.com
+blog_url=https://groupthreads.com/blog
+ghost_username=tech@groupthreads.com
+ghost_password=hellodocker
+volume_driver=rancher-nfs
+blog_data=blog-data

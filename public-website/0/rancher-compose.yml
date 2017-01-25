@@ -1,0 +1,17 @@
+version: '2'
+services:
+  blog-data:
+    scale: 1
+    start_on_create: true
+
+  blog:
+    scale: 1
+    start_on_create: true
+
+  ghost-proxy:
+    scale: 1
+    start_on_create: true
+
+  public-website:
+    scale: 2
+    start_on_create: true
