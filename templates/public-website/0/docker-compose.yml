@@ -3,17 +3,17 @@ version: '2'
 volumes:
   blog-data:
     external: true
-    driver: ${VOLUME_DRIVER}
+    driver: ${volume_driver}
 
 services:
   blog-data:
     image: mariadb:latest
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${mysql_root_password}
       MYSQL_DATABASE: ghost
       stdin_open: true
     volumes:
-      - ${BLOG_DATA}:/var/lib/mysql
+      - ${blog_data}:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
@@ -22,9 +22,9 @@ services:
   blog:
     image: jamrizzi/ghost:latest
     environment:
-      GHOST_URL: ${GHOST_URL}
+      GHOST_URL: ${ghost_url}
       MYSQL_USER: root
-      MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${mysql_root_password}
     stdin_open: true
     tty: true
     links:
@@ -35,10 +35,10 @@ services:
   ghost-proxy:
     image: jamrizzi/ghost-proxy:latest
     environment:
-      GPROXY_GHOST: ${GHOST_URL}
-      GPROXY_BLOG: ${BLOG_URL}
-      GPROXY_USERNAME: ${GHOST_USERNAME}
-      GPROXY_PASSWORD: ${GHOST_PASSWORD}
+      GPROXY_GHOST: ${ghost_url}
+      GPROXY_BLOG: ${blog_url}
+      GPROXY_USERNAME: ${ghost_username}
+      GPROXY_PASSWORD: ${ghost_password}
       GPROXY_CLIENT_SECRET: not_set_yet
       VIRTUAL_PORT: '3008'
     stdin_open: true
