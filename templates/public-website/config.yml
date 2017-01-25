@@ -1,5 +1,5 @@
 name: "Public Website"
 description: |
   GroupThreads public website (including a blog)
-version: 0.10.0.1-rancher1 
+version: "3.0.0"
 category: Website

@@ -1,5 +1,3 @@
-version: '2'
-
 volumes:
   blog-data:
     external: true

@@ -1,4 +1,25 @@
-version: '2'
+.catalog:
+  name: "Public Website"
+  version: "3.0.0"
+  description: "GroupThreads public website (including a blog)"
+  uuid: "3.0.0"
+  minimum_rancher_version: "v0.56.0"
+  questions:
+    - variable: mysql_root_password
+      default: hellodocker
+    - variable: ghost_url
+      default: https://ghost.groupthreads.com
+    - variable: blog_url
+      default: https://groupthreads.com/blog
+    - variable: ghost_username
+      default: tech@groupthreads.com
+    - variable: ghost_password
+      default: hellodocker
+    - variable: volume_driver
+      default: rancher-nfs
+    - variable: blog_data
+      default: blog-data
+
 services:
   blog-data:
     scale: 1
