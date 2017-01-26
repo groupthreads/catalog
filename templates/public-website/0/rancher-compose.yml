@@ -1,38 +1,50 @@
 .catalog:
-  name: "Public Website"
-  version: "3.0.0"
-  description: "GroupThreads public website (including a blog)"
-  uuid: "3.0.0"
-  minimum_rancher_version: "v0.56.0"
+  name: Public Website
+  version: 3.0.0
+  description: 'GroupThreads public website (includes a blog)'
+  uuid: 3.0.0-groupthreads/public-website
   questions:
     - variable: mysql_root_password
+      label: 'MYSQL Root Password'
+      type: string
       default: hellodocker
     - variable: ghost_url
+      label: 'Ghost URL'
+      type: string
+      required: true
       default: https://ghost.groupthreads.com
     - variable: blog_url
+      label: 'Blog URL'
+      type: string
+      required: true
       default: https://groupthreads.com/blog
     - variable: ghost_username
+      label: 'Ghost Username'
+      type: string
+      required: true
       default: tech@groupthreads.com
     - variable: ghost_password
+      label: 'Ghost Password'
+      type: string
+      required: true
       default: hellodocker
     - variable: volume_driver
+      label: 'Volume Driver'
+      type: string
+      required: true
       default: rancher-nfs
     - variable: blog_data
+      label: 'Blog Data'
+      type: string
+      required: true
       default: blog-data
 
 services:
   blog-data:
     scale: 1
-    start_on_create: true
-
   blog:
     scale: 1
-    start_on_create: true
-
   ghost-proxy:
     scale: 1
-    start_on_create: true
-
   public-website:
     scale: 2
-    start_on_create: true

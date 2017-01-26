@@ -1,5 +1,4 @@
-name: "Public Website"
-description: |
-  GroupThreads public website (including a blog)
-version: "3.0.0"
+name: 'Public Website'
+description: 'GroupThreads public website (includes a blog)'
+version: 3.0.0
 category: Website
