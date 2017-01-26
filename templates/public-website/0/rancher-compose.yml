@@ -1,8 +1,8 @@
 .catalog:
   name: Public Website
-  version: 3.0.0
+  version: 1.0.0
   description: 'GroupThreads public website (includes a blog)'
-  uuid: 3.0.0-groupthreads/public-website
+  uuid: public-website-1.0.0-0
   questions:
     - variable: mysql_root_password
       label: 'MYSQL Root Password'
