@@ -1,6 +1,5 @@
 volumes:
-  blog-data:
-    external: true
+  ${blog_data}:
     driver: ${volume_driver}
 
 services:

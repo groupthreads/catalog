@@ -1,0 +1,22 @@
+.catalog:
+  name: Rest API
+  version: 1.0.0
+  description: 'GroupThreads rest api'
+  uuid: rest-api-1.0.0-0
+  questions:
+    - variable: volume_driver
+      label: 'Volume Driver'
+      type: string
+      required: true
+      default: rancher-nfs
+    - variable: blog_data
+      label: 'API Data'
+      type: string
+      required: true
+      default: api-data
+
+services:
+  rest-api:
+    scale: 1
+  api-data:
+    scale: 1
