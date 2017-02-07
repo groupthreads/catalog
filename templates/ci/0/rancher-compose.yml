@@ -17,6 +17,7 @@
     - variable: drone_secret
       label: 'Drone Secret'
       type: string
+      default: drone=secret
     - variable: volume_driver
       label: 'Volume Driver'
       type: string
