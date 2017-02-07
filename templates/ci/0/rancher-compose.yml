@@ -1,0 +1,37 @@
+.catalog:
+  name: CI
+  version: 1.0.0
+  description: 'GroupThreads continuous integration pipeline'
+  uuid: ci-1.0.0-0
+  questions:
+    - variable: mysql_root_password
+      label: 'MYSQL Root Password'
+      type: string
+      default: hellodocker
+    - variable: drone_github_client
+      label: 'Drone GitHub Client'
+      type: string
+    - variable: drone_github_secret
+      label: 'Drone GitHub Secret'
+      type: string
+    - variable: drone_secret
+      label: 'Drone Secret'
+      type: string
+    - variable: volume_driver
+      label: 'Volume Driver'
+      type: string
+      required: true
+      default: rancher-nfs
+    - variable: blog_data
+      label: 'Drone Data'
+      type: string
+      required: true
+      default: drone-data
+
+services:
+  drone-data:
+    scale: 1
+  drone-server:
+    scale: 1
+  drone-agent:
+    scale: 1

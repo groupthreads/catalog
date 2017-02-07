@@ -1,0 +1,4 @@
+name: 'CI'
+description: 'GroupThreads continuous integration pipeline'
+version: 1.0.0
+category: CI
