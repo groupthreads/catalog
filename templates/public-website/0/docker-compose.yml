@@ -14,7 +14,7 @@ services:
     tty: true
     labels:
       io.rancher.container.pull_image: always
-      ident: 'true'
+      ident: true
 
   blog:
     image: jamrizzi/ghost:latest
@@ -37,7 +37,7 @@ services:
       GPROXY_USERNAME: ${ghost_username}
       GPROXY_PASSWORD: ${ghost_password}
       GPROXY_CLIENT_SECRET: not_set_yet
-      VIRTUAL_PORT: '3008'
+      VIRTUAL_PORT: 3008
     stdin_open: true
     tty: true
     labels:

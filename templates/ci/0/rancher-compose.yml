@@ -14,10 +14,14 @@
     - variable: drone_github_secret
       label: 'Drone GitHub Secret'
       type: string
+    - variable: drone_orgs
+      label: 'Drone Orgs'
+      type: string
+      default: groupthreads
     - variable: drone_secret
       label: 'Drone Secret'
       type: string
-      default: drone=secret
+      default: drone-secret
     - variable: volume_driver
       label: 'Volume Driver'
       type: string

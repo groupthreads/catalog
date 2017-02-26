@@ -1,0 +1,9 @@
+.catalog:
+  name: Dashboard
+  version: 1.0.0
+  description: 'GroupThreads dashboard'
+  uuid: dashboard-1.0.0-0
+
+services:
+  store:
+    scale: 2
