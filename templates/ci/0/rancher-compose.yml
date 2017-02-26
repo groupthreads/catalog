@@ -27,7 +27,7 @@
       type: string
       required: true
       default: rancher-nfs
-    - variable: blog_data
+    - variable: drone_data
       label: 'Drone Data'
       type: string
       required: true
