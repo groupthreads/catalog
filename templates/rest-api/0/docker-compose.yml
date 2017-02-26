@@ -1,7 +1,3 @@
-volumes:
-  ${api_data}:
-    driver: ${volume_driver}
-
 services:
   rest-api:
     image: groupthreads/rest-api:latest

@@ -28,11 +28,6 @@
       type: string
       required: true
       default: hellodocker
-    - variable: volume_driver
-      label: 'Volume Driver'
-      type: string
-      required: true
-      default: rancher-nfs
     - variable: blog_data
       label: 'Blog Data'
       type: string

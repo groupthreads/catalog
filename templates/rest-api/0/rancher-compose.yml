@@ -4,11 +4,6 @@
   description: 'GroupThreads rest api'
   uuid: rest-api-1.0.0-0
   questions:
-    - variable: volume_driver
-      label: 'Volume Driver'
-      type: string
-      required: true
-      default: rancher-nfs
     - variable: blog_data
       label: 'API Data'
       type: string
