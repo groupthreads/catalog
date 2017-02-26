@@ -10,8 +10,7 @@
       required: true
       default: api-data
 
-services:
-  rest-api:
-    scale: 1
-  api-data:
-    scale: 1
+rest-api:
+  scale: 1
+api-data:
+  scale: 1

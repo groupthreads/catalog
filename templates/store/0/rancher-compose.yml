@@ -4,6 +4,5 @@
   description: 'GroupThreads store'
   uuid: store-1.0.0-0
 
-services:
-  store:
-    scale: 2
+store:
+  scale: 2

@@ -28,10 +28,9 @@
       required: true
       default: drone-data
 
-services:
-  drone-data:
-    scale: 1
-  drone-server:
-    scale: 1
-  drone-agent:
-    scale: 1
+drone-data:
+  scale: 1
+drone-server:
+  scale: 1
+drone-agent:
+  scale: 1

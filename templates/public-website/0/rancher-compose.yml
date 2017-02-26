@@ -34,12 +34,11 @@
       required: true
       default: blog-data
 
-services:
-  blog-data:
-    scale: 1
-  blog:
-    scale: 1
-  ghost-proxy:
-    scale: 1
-  public-website:
-    scale: 2
+blog-data:
+  scale: 1
+blog:
+  scale: 1
+ghost-proxy:
+  scale: 1
+public-website:
+  scale: 2
