@@ -2,7 +2,7 @@
   name: CI
   version: 1.0.0
   description: 'GroupThreads continuous integration pipeline'
-  uuid: ci-1.0.0-0
+  uuid: ci-1.0.0-1
   questions:
     - variable: mysql_root_password
       label: 'MYSQL Root Password'
