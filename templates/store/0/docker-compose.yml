@@ -1,8 +1,7 @@
-services:
-  store:
-    image: groupthreads/store:latest
-    tty: true
-    labels:
-      logspout: false
-      filebeat: false
-      io.rancher.container.pull_image: always
+store:
+  image: groupthreads/store:latest
+  tty: true
+  labels:
+    logspout: false
+    filebeat: false
+    io.rancher.container.pull_image: always

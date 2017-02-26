@@ -1,45 +1,44 @@
-services:
-  drone-data:
-    image: mariadb:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: ${mysql_root_password}
-      MYSQL_DATABASE: drone
-    stdin_open: true
-    volumes:
-    - ${drone_data}:/var/lib/mysql
-    tty: true
-    labels:
-      io.rancher.container.pull_image: always
-      ident: 'true'
+drone-data:
+  image: mariadb:latest
+  environment:
+    MYSQL_ROOT_PASSWORD: ${mysql_root_password}
+    MYSQL_DATABASE: drone
+  stdin_open: true
+  volumes:
+  - ${drone_data}:/var/lib/mysql
+  tty: true
+  labels:
+    io.rancher.container.pull_image: always
+    ident: 'true'
 
-  drone-server:
-    image: drone/drone:0.5
-    environment:
-      DRONE_OPEN: 'true'
-      DRONE_GITHUB: 'true'
-      DRONE_GITHUB_CLIENT: ${drone_github_client}
-      DRONE_GITHUB_SECRET: ${drone_github_secret}
-      DRONE_SECRET: ${drone_secret}
-      DRONE_ORGS : ${drone_orgs}
-      DRONE_DATABASE_DRIVER: mysql
-      DRONE_DATABASE_DATASOURCE: root:${mysql_root_password}@tcp(database:3306)/drone?parseTime=true
-    tty: true
-    links:
-    - drone-data:database
-    labels:
-      io.rancher.container.pull_image: always
+drone-server:
+  image: drone/drone:0.5
+  environment:
+    DRONE_OPEN: 'true'
+    DRONE_GITHUB: 'true'
+    DRONE_GITHUB_CLIENT: ${drone_github_client}
+    DRONE_GITHUB_SECRET: ${drone_github_secret}
+    DRONE_SECRET: ${drone_secret}
+    DRONE_ORGS : ${drone_orgs}
+    DRONE_DATABASE_DRIVER: mysql
+    DRONE_DATABASE_DATASOURCE: root:${mysql_root_password}@tcp(database:3306)/drone?parseTime=true
+  tty: true
+  links:
+  - drone-data:database
+  labels:
+    io.rancher.container.pull_image: always
 
-  drone-agent:
-    image: drone/drone:0.5
-    environment:
-      DRONE_SERVER: ws://drone-server:8000/ws/broker
-      DRONE_SECRET: ${drone_secret}
-    volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-    tty: true
-    links:
-    - drone-server:drone-server
-    command:
-    - agent
-    labels:
-      io.rancher.container.pull_image: always
+drone-agent:
+  image: drone/drone:0.5
+  environment:
+    DRONE_SERVER: ws://drone-server:8000/ws/broker
+    DRONE_SECRET: ${drone_secret}
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
+  tty: true
+  links:
+  - drone-server:drone-server
+  command:
+  - agent
+  labels:
+    io.rancher.container.pull_image: always

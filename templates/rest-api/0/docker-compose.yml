@@ -1,19 +1,18 @@
-services:
-  rest-api:
-    image: groupthreads/rest-api:latest
-    tty: true
-    links:
-    - api-data:mongo
-    labels:
-      logspout: true
-      filebeat: true
-      io.rancher.container.pull_image: always
+rest-api:
+  image: groupthreads/rest-api:latest
+  tty: true
+  links:
+  - api-data:mongo
+  labels:
+    logspout: true
+    filebeat: true
+    io.rancher.container.pull_image: always
 
-  api-data:
-    image: mongo:latest
-    volumes:
-    - ${api_data}:/data/db
-    tty: true
-    labels:
-      io.rancher.container.pull_image: always
-      ident: true
+api-data:
+  image: mongo:latest
+  volumes:
+  - ${api_data}:/data/db
+  tty: true
+  labels:
+    io.rancher.container.pull_image: always
+    ident: true
